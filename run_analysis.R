@@ -1,4 +1,4 @@
-###  1.Merges the training and the test sets to create one data set
+##  1.Merges the training and the test sets to create one data set
 
 setwd("C:/Users/xrma/Desktop/UCI HAR Dataset")
 obs_test <- read.table(".//test/X_test.txt")
@@ -7,7 +7,7 @@ obs_train <- read.table(".//train/X_train.txt")
 library(tidyr)
 library(dplyr)
 
-obs_tot <- bind_rows(obs_test,obs_train)   ###resulting dataframe "X_tot"
+obs_tot <- bind_rows(obs_test,obs_train)   ###resulting dataframe "obs_tot"
 
 
 
