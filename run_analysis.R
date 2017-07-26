@@ -1,4 +1,4 @@
-##  1.Merges the training and the test sets to create one data set
+###  1.Merges the training and the test sets to create one data set
 
 setwd("C:/Users/xrma/Desktop/UCI HAR Dataset")
 obs_test <- read.table(".//test/X_test.txt")
@@ -63,8 +63,5 @@ subject_train <- read.table(".//train/subject_train.txt")
 subject_tot <- bind_rows(subject_test,subject_train)
 names(subject_tot) <- "subject"
 data <- bind_cols(subject_tot,obs_tot.name)
-data.groupby <- data %>% group_by(subject,activities)
-
-
-
+tidydata <- data %>% group_by(subject,activities) %>% summarise_all(mean)
 write.table(tidydata, "TidyData.txt", row.name=FALSE)
